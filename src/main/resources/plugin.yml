@@ -17,3 +17,9 @@ commands:
         description: Shout a message
         usage: |
             /<ss, santa, secretsanta> <[playername], open>
+    setlore:
+        aliases:
+            - 'sl'
+        description: Sets the lore of the players hand item.
+        usage: |
+            /<setlore, sl> [index] [.. lore ..]

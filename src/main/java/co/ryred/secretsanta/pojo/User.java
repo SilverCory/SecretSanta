@@ -113,7 +113,7 @@ public class User
 
 	public void addItem( ItemStack is, UUID sender )
 	{
-		if ( is == null || is.getType() == Material.AIR ) throw new IllegalArgumentException( "There was no item." );
+		if ( is == null || is.getType() == Material.AIR ) throw new IllegalArgumentException( "You need an item in your hand!" );
 
 		for ( SackItem item : sackItemList ) {
 			if ( item.getLeaver().equals( sender ) ) {

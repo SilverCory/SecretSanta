@@ -1,5 +1,6 @@
-package co.ryred.secretsanta;
+package co.ryred.secretsanta.commands;
 
+import co.ryred.secretsanta.SecretSantaPlugin;
 import co.ryred.secretsanta.pojo.User;
 import co.ryred.secretsanta.util.CooldownUtil;
 import co.ryred.secretsanta.util.GeneralUtils;

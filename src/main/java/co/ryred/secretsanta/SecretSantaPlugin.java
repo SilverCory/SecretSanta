@@ -1,5 +1,7 @@
 package co.ryred.secretsanta;
 
+import co.ryred.secretsanta.commands.SecretSantaCommand;
+import co.ryred.secretsanta.commands.SetLoreCommand;
 import co.ryred.secretsanta.pojo.*;
 import co.ryred.secretsanta.util.CooldownUtil;
 import lombok.Getter;
@@ -54,6 +56,7 @@ public class SecretSantaPlugin extends JavaPlugin
 		ConfigurationSerialization.registerClass( SackItem.class );
 
 		getCommand( "secretsanta" ).setExecutor( new SecretSantaCommand( this ) );
+		getCommand( "secretsanta" ).setExecutor( new SetLoreCommand( this ) );
 		new PlayerListener( this );
 
 	}
