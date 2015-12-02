@@ -57,7 +57,7 @@ public class SecretSantaPlugin extends JavaPlugin
 		ConfigurationSerialization.registerClass( SackItem.class );
 
 		getCommand( "secretsanta" ).setExecutor( new SecretSantaCommand( this ) );
-		getCommand( "secretsanta" ).setExecutor( new SetLoreCommand( this ) );
+		getCommand( "setlore" ).setExecutor( new SetLoreCommand( this ) );
 		new PlayerListener( this );
 
 	}
