@@ -15,7 +15,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -30,10 +29,9 @@ public class User
 	final String userName;
 	@Getter
 	final UUID uuid;
-	List<SackItem> sackItemList = new ArrayList<>( 45 );
-	
 	final File configFile;
 	final YamlConfiguration config;
+	List<SackItem> sackItemList = new ArrayList<>( 45 );
 
 	@SuppressWarnings("unchecked")
 	public User( SecretSantaPlugin plugin, OfflinePlayer player )
@@ -77,7 +75,7 @@ public class User
 
 	public void saveUser( SecretSantaPlugin plugin )
 	{
-		
+
 		getConfig().set( "name", userName );
 		getConfig().set( "uuid", uuid.toString() );
 		getConfig().set( "itemList", sackItemList );
@@ -113,7 +111,9 @@ public class User
 
 	public void addItem( ItemStack is, UUID sender )
 	{
-		if ( is == null || is.getType() == Material.AIR ) throw new IllegalArgumentException( "You need an item in your hand!" );
+		if ( is == null || is.getType() == Material.AIR ) {
+			throw new IllegalArgumentException( "You need an item in your hand!" );
+		}
 
 		for ( SackItem item : sackItemList ) {
 			if ( item.getLeaver().equals( sender ) ) {
@@ -124,9 +124,10 @@ public class User
 		sackItemList.add( new SackItem( is, sender ) );
 
 	}
-	
-	private YamlConfiguration getConfig() {
+
+	private YamlConfiguration getConfig()
+	{
 		return this.config;
 	}
-	
+
 }

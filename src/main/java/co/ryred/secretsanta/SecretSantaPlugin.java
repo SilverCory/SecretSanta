@@ -2,7 +2,8 @@ package co.ryred.secretsanta;
 
 import co.ryred.secretsanta.commands.SecretSantaCommand;
 import co.ryred.secretsanta.commands.SetLoreCommand;
-import co.ryred.secretsanta.pojo.*;
+import co.ryred.secretsanta.pojo.SackItem;
+import co.ryred.secretsanta.pojo.User;
 import co.ryred.secretsanta.util.CooldownUtil;
 import lombok.Getter;
 import lombok.Setter;
@@ -68,7 +69,7 @@ public class SecretSantaPlugin extends JavaPlugin
 
 	public void _D( String... s )
 	{
-		if( !isDebugging() ) return;
+		if ( !isDebugging() ) return;
 		StringBuilder sb = new StringBuilder( "[D] " );
 		for ( String str : s )
 			sb.append( "| " ).append( str );

@@ -114,21 +114,22 @@ public class SecretSantaCommand implements CommandExecutor
 				return true;
 			}
 
-			if( player.getUniqueId().equals( offlinePlayer.getUniqueId() ) ) {
+			if ( player.getUniqueId().equals( offlinePlayer.getUniqueId() ) ) {
 				sender.sendMessage( GeneralUtils.c( "&c&lNo! You can't give yourself gifts." ) );
 				return true;
 			}
 
 			User user;
-			if( plugin.hasUser( offlinePlayer.getUniqueId() ) && plugin.getUser( uuid ) != null ) {
+			if ( plugin.hasUser( offlinePlayer.getUniqueId() ) && plugin.getUser( uuid ) != null ) {
 				user = plugin.getUser( uuid );
-			} else {
+			}
+			else {
 				user = new User( plugin, offlinePlayer );
 			}
 
 			try {
 				ItemStack is = player.getItemInHand().clone();
-				is.setAmount(1);
+				is.setAmount( 1 );
 				user.addItem( is, player.getUniqueId() );
 				user.saveUser( plugin );
 				player.sendMessage( GeneralUtils.c( "&aYour item has been added to " + user.getUserName() + "'s secret santa sack!" ) );
@@ -140,9 +141,10 @@ public class SecretSantaCommand implements CommandExecutor
 
 			return true;
 
-		} else if ( args.length == 2 && args[0].equalsIgnoreCase( "admin" ) ) {
+		}
+		else if ( args.length == 2 && args[ 0 ].equalsIgnoreCase( "admin" ) ) {
 
-			if( !sender.hasPermission( "secretsanta.admin" ) ) {
+			if ( !sender.hasPermission( "secretsanta.admin" ) ) {
 				sendUsage( sender, s );
 				return true;
 			}
@@ -162,15 +164,16 @@ public class SecretSantaCommand implements CommandExecutor
 				return true;
 			}
 
-			if( player.getUniqueId().equals( offlinePlayer.getUniqueId() ) ) {
+			if ( player.getUniqueId().equals( offlinePlayer.getUniqueId() ) ) {
 				sender.sendMessage( GeneralUtils.c( "&c&lI'm not going to let you spoil the surprise!" ) );
 				return true;
 			}
 
 			User user;
-			if( plugin.hasUser( offlinePlayer.getUniqueId() ) && plugin.getUser( uuid ) != null ) {
+			if ( plugin.hasUser( offlinePlayer.getUniqueId() ) && plugin.getUser( uuid ) != null ) {
 				user = plugin.getUser( uuid );
-			} else {
+			}
+			else {
 				user = new User( plugin, offlinePlayer );
 			}
 

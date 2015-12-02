@@ -55,14 +55,14 @@ public class SackItem implements ConfigurationSerializable
 
 		ArrayList<String> lore = new ArrayList<>();
 
-		if( meta.getLore() != null ) {
+		if ( meta.getLore() != null ) {
 			lore.addAll( meta.getLore() );
 
 			lore.add( "" );
 			lore.add( "" );
-			
+
 		}
-		
+
 		lore.add( "" );
 		lore.add( GeneralUtils.c( "&bGift sender: " ) );
 		lore.add( GeneralUtils.c( "&a    " + getLeaverName( admin ) ) );
@@ -80,7 +80,7 @@ public class SackItem implements ConfigurationSerializable
 		OfflinePlayer leaverPlayer = Bukkit.getOfflinePlayer( leaver );
 		if ( leaverPlayer == null ) return "Unknown Player. :(";
 
-		return (isOpen() || admin) ? leaverPlayer.getName() : Strings.repeat( "*", leaverPlayer.getName().length() );
+		return ( isOpen() || admin ) ? leaverPlayer.getName() : Strings.repeat( "*", leaverPlayer.getName().length() );
 
 	}
 
