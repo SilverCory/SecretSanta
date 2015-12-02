@@ -1,0 +1,19 @@
+name: SecretSanta
+main: co.ryred.secretsanta.SecretSantaPlugin
+version: ${pom.version}-B#${env.BUILD_NUMBER}
+author: Cory Redmond
+permissions:
+    secretsanta.player:
+        description: Gives players secret santa
+        default: true
+    secretsanta.admin:
+        description: Allows players to open anyones sack.
+        default: false
+commands:
+    secretsanta:
+        aliases:
+            - 'santa'
+            - 'ss'
+        description: Shout a message
+        usage: |
+            /<ss, santa, secretsanta> <[playername], open>
