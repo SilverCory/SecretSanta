@@ -202,6 +202,9 @@ public class SecretSantaCommand implements CommandExecutor
 		if ( SecretSantaPlugin.isClaimable() ) {
 			arrayList.add( GeneralUtils.c( "&a  /" + label + " open" ) );
 			arrayList.add( GeneralUtils.c( "&b   Opens your sack!" ) );
+		} else {
+			arrayList.add( GeneralUtils.c( "&a&m  /" + label + " open" ) );
+			arrayList.add( GeneralUtils.c( "&b&m   Opens your sack!&r&b Wait till the 23rd!" ) );
 		}
 
 		if ( sender.hasPermission( "secretsanta.admin" ) ) {
@@ -211,7 +214,7 @@ public class SecretSantaCommand implements CommandExecutor
 
 		if ( sender instanceof ConsoleCommandSender ) {
 			arrayList.add( GeneralUtils.c( "&a  /" + label + " toggle" ) );
-			arrayList.add( GeneralUtils.c( "&b   Enables opening of the sacks!" ) );
+			arrayList.add(GeneralUtils.c("&b   Enables opening of the sacks!"));
 		}
 
 		sender.sendMessage( arrayList.toArray( new String[ arrayList.size() ] ) );

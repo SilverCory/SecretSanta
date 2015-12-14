@@ -2,6 +2,7 @@ package co.ryred.secretsanta.commands;
 
 import co.ryred.secretsanta.SecretSantaPlugin;
 import co.ryred.secretsanta.util.GeneralUtils;
+import co.ryred.secretsanta.util.SelfExtendingArrayList;
 import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -63,8 +64,9 @@ public class SetLoreCommand implements CommandExecutor
 
 		ItemMeta im = player.getItemInHand().getItemMeta();
 
-		List<String> loreList = new ArrayList<>();
-		if ( im.getLore() != null ) { loreList = im.getLore(); }
+		List<String> loreList = new SelfExtendingArrayList<>();
+		if ( im.getLore() != null )
+			loreList.addAll( im.getLore() );
 
 		loreList.set( line, GeneralUtils.c( sb.toString() ) );
 
