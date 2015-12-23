@@ -51,7 +51,8 @@ public class SackItem implements ConfigurationSerializable
 	public ItemStack getDisplayItem( boolean admin )
 	{
 
-		ItemMeta meta = item.getItemMeta();
+		ItemStack clonedItem = item.clone();
+		ItemMeta meta = clonedItem.getItemMeta();
 
 		ArrayList<String> lore = new ArrayList<>();
 
@@ -68,9 +69,9 @@ public class SackItem implements ConfigurationSerializable
 		lore.add( GeneralUtils.c( "&a    " + getLeaverName( admin ) ) );
 
 		meta.setLore( lore );
-		item.setItemMeta( meta );
+		clonedItem.setItemMeta( meta );
 
-		return item;
+		return clonedItem;
 
 	}
 
