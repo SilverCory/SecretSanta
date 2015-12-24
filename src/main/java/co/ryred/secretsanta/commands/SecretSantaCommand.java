@@ -135,6 +135,13 @@ public class SecretSantaCommand implements CommandExecutor
 				player.sendMessage( GeneralUtils.c( "&aYour item has been added to " + user.getUserName() + "'s secret santa sack!" ) );
 				player.setItemInHand( new ItemStack( Material.AIR ) );
 				player.playSound( player.getLocation(), Sound.HORSE_SKELETON_HIT, 1L, 1L );
+
+				if( offlinePlayer.isOnline() && offlinePlayer.getPlayer() != null ) {
+					Player receiver = offlinePlayer.getPlayer();
+					receiver.playSound( player.getLocation(), Sound.HORSE_SKELETON_HIT, 1L, 1L );
+					receiver.sendMessage( GeneralUtils.c( "&a&lYou've received a gift! &d/ss open &eto see!" ) );
+				}
+
 			} catch ( Exception e ) {
 				player.sendMessage( GeneralUtils.c( "&c" + e.getMessage() ) );
 			}
