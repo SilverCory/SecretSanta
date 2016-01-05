@@ -177,8 +177,8 @@ public class SecretSantaCommand implements CommandExecutor
 			}
 
 			User user;
-			if ( plugin.hasUser( offlinePlayer.getUniqueId() ) && plugin.getUser( uuid ) != null ) {
-				user = plugin.getUser( uuid );
+			if ( plugin.hasUser( offlinePlayer.getUniqueId() ) && plugin.getUser( offlinePlayer.getUniqueId() ) != null ) {
+				user = plugin.getUser( offlinePlayer.getUniqueId() );
 			}
 			else {
 				user = new User( plugin, offlinePlayer );
