@@ -10,7 +10,7 @@ public class SelfExtendingArrayList<T> extends ArrayList<T> {
     @Override
     public T set(int index, T element) {
 
-        if( size() < ++index && element instanceof String ) {
+        if( size() < index + 1 && element instanceof String ) {
             System.out.println("Is string and size < index" + size() + " | " + index);
             while( size() < index + 1 ) {
                 add( (T)"" );
