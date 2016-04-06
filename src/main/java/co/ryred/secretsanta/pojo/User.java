@@ -59,17 +59,6 @@ public class User
 		this.userName = getConfig().getString( "name", player.getName() );
 		this.uuid = UUID.fromString( getConfig().getString( "uuid", player.getUniqueId().toString() ) );
 		this.sackItemList = (List<SackItem>) getConfig().getList( "itemList" );
-		/*for ( Map<?, ?> map : getConfig().getMapList( "itemList" ) ) {
-
-			if ( map == null ) {
-				plugin._D( "Map = null" );
-				continue;
-			} else {
-				plugin._D( "SackItem: " + map );
-			}
-			sackItemList.add( SackItem.deserialize( (Map<String, Object>) map ) );
-
-		}*/
 
 	}
 
