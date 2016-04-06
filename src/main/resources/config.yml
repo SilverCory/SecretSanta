@@ -6,4 +6,5 @@ debugging: false
 
 claimable: false
 
+# In seconds.
 cooldown-time: 60
