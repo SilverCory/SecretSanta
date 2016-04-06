@@ -34,8 +34,10 @@ public class SetLoreCommand implements CommandExecutor
 	{
 
 		if ( !( sender instanceof Player ) ) {
+			
 			sender.sendMessage( GeneralUtils.c( "&cOnly players use this command!" ) );
 			return true;
+			
 		}
 
 		Player player = (Player) sender;
