@@ -39,6 +39,12 @@ public class SecretSantaPlugin extends JavaPlugin
 	{
 		logger = getLogger();
 	}
+	
+	@Override
+	public void onDisable()
+	{
+		logger = Logger.getGlobal();
+	}
 
 	@Override
 	public void onEnable()
